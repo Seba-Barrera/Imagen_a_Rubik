@@ -37,6 +37,14 @@ import streamlit as st
 
 
 #=================================================================
+# parametros de tamano de imagenes entregables 
+#=================================================================
+
+param_ancho_subplot = 20
+param_dim_img = (45,10)
+
+
+#=================================================================
 # Definir funcion de distancia euclidiana
 #=================================================================
 
@@ -299,10 +307,11 @@ def img2rubik(
 @st.cache_resource() # https://docs.streamlit.io/library/advanced-features/caching
 def graf_1img(
   lista_imgs,
-  n_imagen
+  n_imagen,
+  dim_img = (60,28)
 ):
   
-  fig,ax = plt.subplots(figsize = (60,28))
+  fig,ax = plt.subplots(figsize = dim_img)
   
   if(n_imagen==5):
     
@@ -546,9 +555,6 @@ def img2rubik_gris(
     ]
 
 
-
-
-
 #=================================================================
 # Crear funcion para graficar una imagen (en gris)
 #=================================================================
@@ -556,10 +562,11 @@ def img2rubik_gris(
 @st.cache_resource() # https://docs.streamlit.io/library/advanced-features/caching
 def graf_1img_gris(
   lista_imgs,
-  n_imagen
+  n_imagen,
+  dim_img = (60,28)
 ):
   
-  fig3,ax = plt.subplots(figsize = (60,28))
+  fig3,ax = plt.subplots(figsize = dim_img)
 
   if(n_imagen==6):
     
@@ -760,7 +767,7 @@ if Archivo:
     st_fig_suplot = graf_subplot(
       lista_imgs = mi_lista_imgs,
       letra_titulo = 35,
-      ancho_subplot = 30 
+      ancho_subplot = param_ancho_subplot
       )
     
   else: 
@@ -768,7 +775,7 @@ if Archivo:
     st_fig_suplot = graf_subplot_gris(
       lista_imgs = mi_lista_imgs,
       letra_titulo = 35,
-      ancho_subplot = 30 
+      ancho_subplot = param_ancho_subplot 
       )
     
   # mostrar imagen 
@@ -808,7 +815,7 @@ if Archivo:
   st_Seleccion_img = st.radio(
     label='Selecciona Imagen:',
     options=opciones_imgs,
-    horizontal=True,
+    horizontal=True
     )
   
   
@@ -817,14 +824,16 @@ if Archivo:
     
     st_fig_img = graf_1img(
       lista_imgs = mi_lista_imgs,
-      n_imagen = opciones_imgs.index(st_Seleccion_img)+1
+      n_imagen = opciones_imgs.index(st_Seleccion_img)+1,
+      dim_img = param_dim_img
       )
     
   else: 
     
     st_fig_img = graf_1img_gris(
       lista_imgs = mi_lista_imgs,
-      n_imagen = opciones_imgs.index(st_Seleccion_img)+1
+      n_imagen = opciones_imgs.index(st_Seleccion_img)+1,
+      dim_img = param_dim_img
       )
     
   # mostrar imagen 
