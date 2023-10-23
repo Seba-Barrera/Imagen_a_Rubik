@@ -681,7 +681,7 @@ Archivo = st.sidebar.file_uploader('Subir Imagen jpg',type=['jpg'])
 st.sidebar.markdown('---')
 
 # titulo inicial 
-st.markdown('## Tu Imagen en Cubos Rubik :large_red_square: :large_blue_square: :large_orange_square: :large_yellow_square: :large_green_square: 	:white_large_square:')
+st.markdown('# Tu Imagen en Cubos Rubik :large_red_square: :large_blue_square: :large_orange_square: :large_yellow_square: :large_green_square: 	:white_large_square:')
 
 
 
