@@ -643,10 +643,10 @@ def graf_subplot_gris(
   # definir titulos
   titulo1 = f'Imagen Original ({lista_imgs[0].shape[0]}x{lista_imgs[0].shape[1]})'
   titulo2 = f'Imagen en B&N'
-  titulo3 = f'Imagen Reducida ({lista_imgs[1].shape[0]}x{lista_imgs[1].shape[1]})'
+  titulo3 = f'Imagen Reducida ({lista_imgs[2].shape[0]}x{lista_imgs[2].shape[1]})'
   titulo4 = f'Reduccion Colores k-means'
   titulo5 = f'Match con colores rubik'
-  titulo6 = f'Detalle cubos rubik ({int(lista_imgs[1].shape[0]/3)}x{int(lista_imgs[1].shape[1]/3)})'
+  titulo6 = f'Detalle cubos rubik ({int(lista_imgs[2].shape[0]/3)}x{int(lista_imgs[2].shape[1]/3)})'
   
   # insertar titulos 
   ax1.set_title(titulo1,size=letra_titulo)
